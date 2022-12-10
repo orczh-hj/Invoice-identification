@@ -117,7 +117,6 @@ def main(files, out_path=None):
 def download_df(df):
     buf = io.BytesIO()
     df.to_excel(buf, index=False, encoding='gbk')
-    buf.close()
     return buf
 
 
