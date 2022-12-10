@@ -5,15 +5,10 @@
 import io
 import time
 import streamlit as st
-import os
-import openpyxl
 import pandas as pd
-import requests
-import base64
-from glob import glob
-
 import base64
 import requests
+import openpyxl
 
 
 def get_file_content_as_base64(path):
@@ -91,7 +86,7 @@ def dict_process(d):
 
 
 @st.cache
-def main(files, out_path=None):
+def main(files):
     ak = '0iZ12lvhS6ZpWiPiwSCMAGCH'
     sk = '9fFD0Co9TG3KVo7Nm3YVh9sBw6FPlALq'
     access_token = get_access_token(ak, sk)
@@ -134,7 +129,10 @@ if __name__ == '__main__':
     st.set_page_config(page_title='发票识别v1',
                        page_icon="wind.ico",
                        layout="wide",
-                       initial_sidebar_state="auto")
+                       initial_sidebar_state="auto",
+                       menu_items={
+                           'About': '**ChenZihan**\n\n**mail:** orczh_hj@163.com\n\n发票识别小程序'
+                       })
     st.title('增值税发票识别与导出')
     st.subheader('选择增值税发票文件')
     files_load = st.file_uploader("发票上传", accept_multiple_files=True, label_visibility="collapsed")
