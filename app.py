@@ -6,7 +6,7 @@ import io
 import time
 import streamlit as st
 import os
-
+import openpyxl
 import pandas as pd
 import requests
 import base64
@@ -117,6 +117,7 @@ def main(files, out_path=None):
 def download_df(df):
     buf = io.BytesIO()
     df.to_excel(buf, index=False, encoding='gbk')
+    buf.close()
     return buf
 
 
