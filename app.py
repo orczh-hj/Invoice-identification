@@ -132,7 +132,7 @@ def post_process(df: pd.DataFrame):
 
 
 if __name__ == '__main__':
-    st.set_page_config(page_title='发票识别',
+    st.set_page_config(page_title='发票识别v1',
                        page_icon="wind.ico",
                        layout="wide",
                        initial_sidebar_state="auto")
